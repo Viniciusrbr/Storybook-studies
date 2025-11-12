@@ -7,6 +7,25 @@ const meta = {
   args: {
     children: "Button",
   },
+  argTypes: {
+    variant: {
+      control: { type: 'select' },
+      options: ['default', 'destructive', 'outline', 'secondary', 'ghost', 'link'],
+    },
+    size: {
+      control: { 
+        type: 'inline-radio', 
+        labels: {
+          sm: 'sm (Small)',
+          lg: 'lg (Large)',
+        }
+      },
+      options: ['default', 'sm', 'lg', 'icon'],
+    },
+    disabled: {
+      control: { type: 'boolean' },
+    },
+  },
 } satisfies Meta<typeof Button>;
 
 export default meta;
