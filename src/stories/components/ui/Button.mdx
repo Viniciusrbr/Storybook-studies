@@ -1,0 +1,230 @@
+import { Meta, Canvas, Story, Controls, Primary, Stories, Source, Subtitle, Description } from '@storybook/addon-docs/blocks';
+import ButtonMeta, { Default, Secondary, Destructive, Outline, Ghost, Link } from './button.stories';
+
+<Meta of={ButtonMeta} />
+
+# Button Component 🎨
+
+<Subtitle>
+  Um componente de botão versátil e acessível construído com React e Tailwind CSS
+</Subtitle>
+
+## 📋 Visão Geral
+
+O componente `Button` é um elemento fundamental de UI que suporta múltiplas variantes, tamanhos e estados.
+Ele é totalmente customizável e segue as melhores práticas de acessibilidade.
+
+---
+
+## 🎯 Exemplo Principal
+
+<Canvas of={Default} />
+
+<Controls of={Default} />
+
+---
+
+## 🎨 Variantes Disponíveis
+
+Nosso botão vem com **6 variantes** diferentes para se adequar a diferentes contextos:
+
+### Default (Padrão)
+O botão primário padrão, ideal para ações principais na interface.
+
+<Canvas of={Default} />
+
+### Secondary (Secundário)
+Para ações secundárias ou menos importantes.
+
+<Canvas of={Secondary} />
+
+### Destructive (Destrutivo)
+Use para ações destrutivas como deletar ou remover itens.
+
+<Canvas of={Destructive} />
+
+### Outline (Contorno)
+Um estilo mais sutil com apenas borda.
+
+<Canvas of={Outline} />
+
+### Ghost (Fantasma)
+Aparência minimalista para ações discretas.
+
+<Canvas of={Ghost} />
+
+### Link
+Estilo de link para navegação.
+
+<Canvas of={Link} />
+
+---
+
+## 📏 Tamanhos
+
+O componente suporta diferentes tamanhos:
+
+- **default**: Tamanho padrão
+- **sm**: Pequeno (ideal para espaços compactos)
+- **lg**: Grande (para maior destaque)
+- **icon**: Quadrado, perfeito para ícones
+
+---
+
+## 💻 Como Usar
+
+### Importação
+
+```tsx
+import { Button } from '@/components/ui/button';
+```
+
+### Uso Básico
+
+```tsx
+function App() {
+  return (
+    <Button onClick={() => console.log('Clicado!')}>
+      Clique aqui
+    </Button>
+  );
+}
+```
+
+### Com Variante e Tamanho
+
+```tsx
+<Button variant="destructive" size="lg">
+  Deletar Item
+</Button>
+```
+
+### Botão Desabilitado
+
+```tsx
+<Button disabled>
+  Não disponível
+</Button>
+```
+
+### Como Child (Renderiza o filho como botão)
+
+```tsx
+<Button asChild>
+  <a href="/perfil">Ver Perfil</a>
+</Button>
+```
+
+---
+
+## 📊 Props do Componente
+
+<Controls />
+
+---
+
+## ⚡ Eventos Suportados
+
+O componente suporta todos os eventos nativos do HTML button:
+
+- `onClick`: Disparado ao clicar no botão
+- `onMouseEnter`: Quando o mouse entra na área do botão
+- `onMouseLeave`: Quando o mouse sai da área do botão
+- E todos os outros eventos React padrão
+
+### Exemplo com Eventos
+
+```tsx
+<Button 
+  onClick={() => alert('Clicado!')}
+  onMouseEnter={() => console.log('Mouse entrou')}
+  onMouseLeave={() => console.log('Mouse saiu')}
+>
+  Hover e Clique
+</Button>
+```
+
+---
+
+## ✅ Melhores Práticas
+
+1. **Use a variante correta**: 
+   - `default` para ações primárias
+   - `destructive` para ações perigosas
+   - `outline` ou `ghost` para ações secundárias
+
+2. **Forneça feedback visual**: O botão já possui estados hover e active integrados
+
+3. **Considere acessibilidade**: 
+   - Sempre forneça texto descritivo
+   - Use `aria-label` quando necessário
+   - Respeite o estado `disabled`
+
+4. **Tamanho apropriado**: Escolha o tamanho baseado no contexto e importância da ação
+
+---
+
+## 🔗 Recursos Relacionados
+
+- [React Button Documentation](https://react.dev/)
+- [Radix UI Primitive](https://www.radix-ui.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+---
+
+## 📝 Notas de Implementação
+
+> **Nota**: Este componente utiliza `class-variance-authority` (CVA) para gerenciar as variantes de estilo de forma type-safe.
+
+> **Dica**: Você pode combinar este componente com ícones da biblioteca `lucide-react` para criar botões com ícones.
+
+---
+
+## 🎭 Todas as Stories
+
+<Stories />
+
+---
+
+## 💡 Exemplos Avançados
+
+### Botão com Ícone
+
+```tsx
+import { Trash2 } from 'lucide-react';
+
+<Button variant="destructive" size="icon">
+  <Trash2 className="h-4 w-4" />
+</Button>
+```
+
+### Botão de Loading
+
+```tsx
+import { Loader2 } from 'lucide-react';
+
+<Button disabled>
+  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+  Carregando...
+</Button>
+```
+
+### Grupo de Botões
+
+```tsx
+<div className="flex gap-2">
+  <Button variant="outline">Cancelar</Button>
+  <Button>Confirmar</Button>
+</div>
+```
+
+---
+
+<div style={{
+  padding: '1rem',
+  backgroundColor: '#f0f9ff',
+  borderLeft: '4px solid #3b82f6',
+  marginTop: '2rem'
+}}>
+  <strong>💡 Dica Pro:</strong> Experimente combinar diferentes variantes e tamanhos usando os controles interativos acima!
+</div>
